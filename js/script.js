@@ -24,3 +24,17 @@
 // }else{
 //     alert("nombre invalido");
 // }
+let numero = 0
+
+function suma(num1, num2){
+     numero = num1 + num2
+}
+function mensaje(resultado){
+    alert("El resultado es: " + resultado)
+}
+
+let numeroA = parseInt(prompt("Ingrese el primer numero: "))
+let numeroB = parseInt(prompt("Ingrese el segundo numero: "))
+
+suma(numeroA, numeroB)
+mensaje(numero)

@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.circulo{
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 100em;
+    height: 20em;
+    margin:2em;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+}
+#lavamanos{
+    background-image: url(/media/lavamanos.jpg);
+    background-position: center;
+}
+#inodoro{
+    background-image: url(/media/inodoro.jpg);
+}
+#ventana{
+    background-image: url(/media/ventana.jpeg);
+    background-position: center;
+}
+.containerSection{
+    display: grid;
+    grid-template-areas: 
+    "iframe h2"
+    "iframe h2"
+    "iframe h3"
+    "iframe h3"
+    "iframe h4"
+    "iframe h4";
+    margin: 2em;
+}
+iframe{
+    grid-area: iframe;
+}
+h2{
+    grid-area: h2;
+}
+h3{
+    grid-area: h3;
+}
+h4{
+    grid-area: h4;
+}
+
