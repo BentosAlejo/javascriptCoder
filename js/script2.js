@@ -64,3 +64,8 @@ let datosCliente = prompt("Ingrese su nro de telefono y su mail de contacto")
 alert("Muchas gracias por su compra,nos pondremos en contacto a la brevedad para concretar el pago")
 
 
+
+
+
+
+
