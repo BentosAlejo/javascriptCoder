@@ -63,9 +63,18 @@
 
 // alert("Muchas gracias por su compra,nos pondremos en contacto a la brevedad para concretar el pago")
 
+const productoA = {nombre: "Puerta", precio: 15000, stock: 12}
 
 
-
+// function producto(nombre, precio, stock) {
+//     this.nombre = nombre;
+//     this.precio = precio;
+//     this.stock = stock;
+// }
+// const producto1 = new producto("Puerta", 15000, 12)
+// const producto2 = new producto("Ventana", 9000, 22)
+// const producto3 = new producto("Inodoro", 10000, 15)
+// const producto4 = new producto("Lavamanos", 7000, 16)
 
 
 
