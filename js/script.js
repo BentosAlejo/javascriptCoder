@@ -11,13 +11,13 @@ for(let i = 0; i < cantidadCompras; i++ ){
     let compra1 = prompt("Ingrese el nombre del producto que quiere comprar: \n-Puerta \n-Ventana \n-Inodoro \n-Lavamanos")
     let cantidad1 = parseInt(prompt("Ingrese la cantidad del producto que quiere comprar: "))
     
-    if(compra1 == "Puerta"){
+    if(compra1 = "Puerta"){
         calculoGlobal(cantidad1, producto1.stock, producto1.precio)
-    }else if(compra1 == "Ventana"){
+    }else if(compra1 = "Ventana"){
         calculoGlobal(cantidad1, producto2.stock, producto2.precio)
-    }else if(compra1 == "Inodoro"){
+    }else if(compra1 = "Inodoro"){
         calculoGlobal(cantidad1, producto3.stock, producto3.precio)
-    }else if(compra1 == "Lavamanos"){
+    }else if(compra1 = "Lavamanos"){
         calculoGlobal(cantidad1, producto4.stock, producto4.precio)
     }else{
         alert("No tenemos ese producto")
