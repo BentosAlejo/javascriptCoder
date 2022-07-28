@@ -42,7 +42,7 @@ function calculoGlobal(producto, cantidad){
         calcularPrecio(cantidad, productoEncontrado.precio)
         alert("El precio es de: $" + (cantidad * productoEncontrado.precio))
     }else{
-        alert("Nuestro stock es de: " + stock + ".")
+        alert("Nuestro stock es de: " + productoEncontrado.stock + ".")
     }
 }
 function calcularPrecio(cantidad, precio){
@@ -51,6 +51,7 @@ function calcularPrecio(cantidad, precio){
 function precioEnvios(precio){
     return precio + 5000
 }
+
 
 
 

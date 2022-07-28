@@ -63,7 +63,7 @@
 
 // alert("Muchas gracias por su compra,nos pondremos en contacto a la brevedad para concretar el pago")
 
-const productoA = {nombre: "Puerta", precio: 15000, stock: 12}
+// const productoA = {nombre: "Puerta", precio: 15000, stock: 12}
 
 
 // function producto(nombre, precio, stock) {
@@ -71,10 +71,71 @@ const productoA = {nombre: "Puerta", precio: 15000, stock: 12}
 //     this.precio = precio;
 //     this.stock = stock;
 // }
+// const createPerson = (name, price, stock) => ({name, price, stock})
 // const producto1 = new producto("Puerta", 15000, 12)
 // const producto2 = new producto("Ventana", 9000, 22)
 // const producto3 = new producto("Inodoro", 10000, 15)
 // const producto4 = new producto("Lavamanos", 7000, 16)
 
 
+// const persona1 = createPerson("Alejo", 10, 200);
+// console.log(persona1)
+//arrays
+let lista = [23, "Alejo", 99, true, "Sabroso"]
+console.log(lista.length)
+console.log(lista[3])
+console.log(lista[1])
+console.log(lista[-1])
+console.log(lista[4])
+
+for(let i = 0; i < lista.length; i++){
+    console.log(lista[i])
+}
+let nombre = prompt("Ingrese su nombre: ")
+let apellido = prompt("Pone apelli2")
+
+const numeros = [1,2,3,4,5]
+
+const suma = numeros[4] + numeros[1]
+console.log(suma)
+for(let index = 0; index < 5; index++){
+    alert(numeros[index])
+}
+
+lista.push(nombre)
+lista.unshift(apellido)
+lista.pop(nombre)
+lista.shift(apellido)
+console.log(lista)
+
+let elementoEliminado = lista.pop()
+// splice elimina 2 elementos de nuesto objeto
+// podemos sacar elemento del medio del objeto
+
+console.log(lista.join("¬"))
+const todoJunto = lista.concat(numeros)
+console.log(todoJunto)
+
+//slice const nombres = ["Rita", "Pedro", "Miguel", "Ana", "Vanesa"]
+// const masculinos = nombres.slice(1, 3) - nuevo array desde la posicion 1 a 3
+// masculinos contiene "Pedro", "Miguel"
+const nombres = ["Toto", "Alejo", "Gaston"]
+console.log(nombres.indexOf("Alejo"))
+console.log(nombres.includes("Lorenzo")) // .includes devuelve boolean de si existe ese elemento en el array o no
+nombres.reverse()
+console.log(nombres) // reverse() invierte el orden de los valores 
+
+const metodosMasComunes = ["length", "(push, unshift)", "(shift, pop, splice)", "join", "concat", "slce", "indexOf", "includes", "reverse"]
+
+let averiguarLongitud = metodosMasComunes[0];
+let agregar = metodosMasComunes[1]
+let quitar = metodosMasComunes[2]
+let juntar = metodosMasComunes[3]
+let combinar = metodosMasComunes[4]
+let cortar = metodosMasComunes[5]
+let obtenerIndice = metodosMasComunes[6]
+let verificarExistencia = metodosMasComunes[7]
+let invertirOrden = metodosMasComunes[8]
+
+console.log(metodosMasComunes.length)
 
