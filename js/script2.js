@@ -82,60 +82,98 @@
 // console.log(persona1)
 //arrays
 let lista = [23, "Alejo", 99, true, "Sabroso"]
-console.log(lista.length)
-console.log(lista[3])
-console.log(lista[1])
-console.log(lista[-1])
-console.log(lista[4])
+// console.log(lista.length)
+// console.log(lista[3])
+// console.log(lista[1])
+// console.log(lista[-1])
+// console.log(lista[4])
 
-for(let i = 0; i < lista.length; i++){
-    console.log(lista[i])
+// for(let i = 0; i < lista.length; i++){
+//     console.log(lista[i])
+// }
+// let nombre = prompt("Ingrese su nombre: ")
+// let apellido = prompt("Pone apelli2")
+
+
+// const suma = numeros[4] + numeros[1]
+// console.log(suma)
+// for(let index = 0; index < 5; index++){
+    //     alert(numeros[index])
+    // }
+    
+    // lista.push(nombre)
+    // lista.unshift(apellido)
+    // lista.pop(nombre)
+    // lista.shift(apellido)
+    // console.log(lista)
+    
+    // let elementoEliminado = lista.pop()
+    // splice elimina 2 elementos de nuesto objeto
+    // podemos sacar elemento del medio del objeto
+    
+    // console.log(lista.join("¬"))
+    // const todoJunto = lista.concat(numeros)
+    // console.log(todoJunto)
+    
+    //slice const nombres = ["Rita", "Pedro", "Miguel", "Ana", "Vanesa"]
+    // const masculinos = nombres.slice(1, 3) - nuevo array desde la posicion 1 a 3
+    // masculinos contiene "Pedro", "Miguel"
+    const nombres = ["Toto", "Alejo", "Gaston"]
+    // console.log(nombres.indexOf("Alejo"))
+    // console.log(nombres.includes("Lorenzo")) // .includes devuelve boolean de si existe ese elemento en el array o no
+    // nombres.reverse()
+    // console.log(nombres) // reverse() invierte el orden de los valores 
+    
+    const metodosMasComunes = ["length", "(push, unshift)", "(shift, pop, splice)", "join", "concat", "slce", "indexOf", "includes", "reverse"]
+    
+    let averiguarLongitud = metodosMasComunes[0];
+    let agregar = metodosMasComunes[1]
+    let quitar = metodosMasComunes[2]
+    let juntar = metodosMasComunes[3]
+    let combinar = metodosMasComunes[4]
+    let cortar = metodosMasComunes[5]
+    let obtenerIndice = metodosMasComunes[6]
+    let verificarExistencia = metodosMasComunes[7]
+    let invertirOrden = metodosMasComunes[8]
+    
+    // console.log(metodosMasComunes.length)
+    const numeros = [1,2,3,4,5]
+    
+    function porCadaUno(arr, fn){
+        for(const el of arr){
+            fn(el)
+    }
 }
-let nombre = prompt("Ingrese su nombre: ")
-let apellido = prompt("Pone apelli2")
+porCadaUno(numeros, console.log)
 
-const numeros = [1,2,3,4,5]
-
-const suma = numeros[4] + numeros[1]
-console.log(suma)
-for(let index = 0; index < 5; index++){
-    alert(numeros[index])
+// function porCadaUno(numeros, console.log){
+//     for(const elemento of numeros){
+//         console.log(elemento)
+//     }
+// }
+function suma(a, b){
+    a + b
 }
+porCadaUno(numeros, suma)
+porCadaUno(["Alejo", "Toto", "Gaston"], console.log)
 
-lista.push(nombre)
-lista.unshift(apellido)
-lista.pop(nombre)
-lista.shift(apellido)
-console.log(lista)
+const duplicado = []
 
-let elementoEliminado = lista.pop()
-// splice elimina 2 elementos de nuesto objeto
-// podemos sacar elemento del medio del objeto
+porCadaUno(numeros, (el) => {
+    duplicado.push(el * 2)
+})
+console.log(duplicado)
+let total = 0
 
-console.log(lista.join("¬"))
-const todoJunto = lista.concat(numeros)
-console.log(todoJunto)
+porCadaUno(numeros, (num) => {total += num})
+numeros.forEach( (num) =>{
+    console.log(num)
+})
+const cursos = [
+    {nombre: "JavaScript", dias: "Martes y Jueves", hora: 19},
+    {nombre: "Diseño", dias:"Miercoles", hora:16}
+]
+const resultado = cursos.find((el) => el.nombre === "JavaScript")
+console.log(resultado)
 
-//slice const nombres = ["Rita", "Pedro", "Miguel", "Ana", "Vanesa"]
-// const masculinos = nombres.slice(1, 3) - nuevo array desde la posicion 1 a 3
-// masculinos contiene "Pedro", "Miguel"
-const nombres = ["Toto", "Alejo", "Gaston"]
-console.log(nombres.indexOf("Alejo"))
-console.log(nombres.includes("Lorenzo")) // .includes devuelve boolean de si existe ese elemento en el array o no
-nombres.reverse()
-console.log(nombres) // reverse() invierte el orden de los valores 
-
-const metodosMasComunes = ["length", "(push, unshift)", "(shift, pop, splice)", "join", "concat", "slce", "indexOf", "includes", "reverse"]
-
-let averiguarLongitud = metodosMasComunes[0];
-let agregar = metodosMasComunes[1]
-let quitar = metodosMasComunes[2]
-let juntar = metodosMasComunes[3]
-let combinar = metodosMasComunes[4]
-let cortar = metodosMasComunes[5]
-let obtenerIndice = metodosMasComunes[6]
-let verificarExistencia = metodosMasComunes[7]
-let invertirOrden = metodosMasComunes[8]
-
-console.log(metodosMasComunes.length)
-
+//.filter hace lo mismo pero busca coincidencias en algun elemento del objeto que contenga la palabra clave que pongamos

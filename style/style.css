@@ -45,4 +45,27 @@ h3{
 h4{
     grid-area: h4;
 }
-
+.container2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 1em;
+}
+#paleta{
+   background-color: aqua;
+   border: 5px solid black;
+   width: 10em;
+   height: 10em;
+}
+#text{
+    font-size: 3em;
+    font-weight: bold;
+}
+.class1{
+    background-color: brown!important;
+    border: 5px solid blue!important;
+}
+.class2{
+    background-color: crimson!important;
+    border: 5px solid darkorange!important;
+}
