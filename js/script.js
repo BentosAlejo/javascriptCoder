@@ -7,7 +7,21 @@ const productos = [
 ];
     let precioTotal = 0
 
-let cantidadCompras = parseInt(prompt("Ingrese la cantidad de productos distintos que quiere comprar: \n-Puerta \n-Ventana \n-Inodoro \n-Lavamanos"))
+ let cantidadCompras = parseInt(prompt("Ingrese la cantidad de productos distintos que quiere comprar: \n-Puerta \n-Ventana \n-Inodoro \n-Lavamanos"))
+
+
+    for(const producto of productos){
+    if(producto.stock != 0){
+    
+    let card = document.createElement("div")
+    card.innerHTML = `<h4>${producto.nombre}</h4
+                      <p>$ ${producto.precio}</p>
+                      <p>Unidades restantes: ${producto.stock}</p>`
+    document.body.append(card) 
+    }                 
+
+}
+
 
 for(let i = 0; i < cantidadCompras; i++ ){
     let compra1 = prompt("Ingrese el nombre del producto que quiere comprar: \n-Puerta \n-Ventana \n-Inodoro \n-Lavamanos")
@@ -29,7 +43,7 @@ if(cantidadCompras > 1){
     alert("Este es el precio de sus productos: " + precioTotal)
 }
 let preccioTotalFinal = precioEnvios(precioTotal)
-alert("Este es el precio total final con envio: " + preccioTotalFinal)
+alert(`Este es el precio total final con envio:  ${preccioTotalFinal}`)
 let datosEnvio = prompt("Ingrese Ciudad, direccion y horario de disponibilidad para realizar el envio de sus productos")
 let datosCliente = prompt("Ingrese su numero de telefono y su mail de contacto")
 alert("Muchas gracias por su compra,nos pondremos en contacto a la brevedad para concretar el pago")
@@ -40,9 +54,9 @@ function calculoGlobal(producto, cantidad){
     
     if(productoEncontrado.stock >= cantidad){
         calcularPrecio(cantidad, productoEncontrado.precio)
-        alert("El precio es de: $" + (cantidad * productoEncontrado.precio))
+        alert(`El precio es de: $" ${cantidad * productoEncontrado.precio}`)
     }else{
-        alert("Nuestro stock es de: " + productoEncontrado.stock + ".")
+        alert(`Nuestro stock es de: ${productoEncontrado.stock} .`)
     }
 }
 function calcularPrecio(cantidad, precio){
@@ -51,6 +65,7 @@ function calcularPrecio(cantidad, precio){
 function precioEnvios(precio){
     return precio + 5000
 }
+
 
 
 
