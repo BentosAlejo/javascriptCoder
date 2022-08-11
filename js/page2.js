@@ -11,6 +11,11 @@ const input3 = document.getElementById("input3")
 const input4 = document.getElementById("input4")
 const card = document.createElement("div")
 const text = document.createElement("label")
+const paleta = document.getElementById("paleta")
+const localItem = localStorage.getItem("classbutton")
+if(localItem !== null){
+    paleta.classList.add(localItem)
+}
 
 const productos = [
     {id:0, nombre: "Puerta", precio: 15000, stock: 12},
@@ -43,7 +48,7 @@ nombre.onchange = () => {
 
 
 clickHere.addEventListener("click", () => {
-    const paleta = document.getElementById("paleta")
+    
     if(paleta.classList.contains("class1")){
         paleta.classList.remove("class1")
         paleta.classList.add("class2")
