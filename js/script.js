@@ -6,8 +6,8 @@ const productos = [
      {nombre: "Lavamanos", precio: 7000, stock: 16}
 ];
     let precioTotal = 0
-
- let cantidadCompras = parseInt(prompt("Ingrese la cantidad de productos distintos que quiere comprar: \n-Puerta \n-Ventana \n-Inodoro \n-Lavamanos"))
+// 
+//  let cantidadCompras = parseInt(prompt("Ingrese la cantidad de productos distintos que quiere comprar: \n-Puerta \n-Ventana \n-Inodoro \n-Lavamanos"))
 
 
     for(const producto of productos){
