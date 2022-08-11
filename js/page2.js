@@ -13,6 +13,7 @@ const card = document.createElement("div")
 const text = document.createElement("label")
 const paleta = document.getElementById("paleta")
 const localItem = localStorage.getItem("classbutton")
+
 if(localItem !== null){
     paleta.classList.add(localItem)
 }
@@ -52,10 +53,13 @@ clickHere.addEventListener("click", () => {
     if(paleta.classList.contains("class1")){
         paleta.classList.remove("class1")
         paleta.classList.add("class2")
+        localStorage.setItem("classbutton", "class2")
     }else if(paleta.classList.contains("class2")){
         paleta.classList.remove("class2")
+        localStorage.removeItem("classbutton")
     }else{
         paleta.classList.add("class1")
+        localStorage.setItem("classbutton", "class1")
     }
 })
 
