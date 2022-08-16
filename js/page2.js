@@ -1,4 +1,4 @@
-const nombre = document.getElementById("formNombre")
+const userName = document.getElementById("formNombre")
 const apellido = document.getElementById("formApellido")
 const email = document.getElementById("formEmail")
 const password = document.getElementById("formPassword")
@@ -14,9 +14,11 @@ const text = document.createElement("label")
 const paleta = document.getElementById("paleta")
 const localItem = localStorage.getItem("classbutton")
 
-if(localItem !== null){
-    paleta.classList.add(localItem)
-}
+localItem != null && paleta.classList.add(localItem)
+    
+    
+   
+
 
 const productos = [
     {id:0, nombre: "Puerta", precio: 15000, stock: 12},
@@ -24,7 +26,8 @@ const productos = [
     {id:2, nombre: "Inodoro", precio: 10000, stock: 15},
     {id:3, nombre: "Lavamanos", precio: 7000, stock: 16}
 ];
-let precioTotal = 0
+
+
 
 
 submit.addEventListener("click", (e) => {
@@ -41,9 +44,9 @@ submit.addEventListener("click", (e) => {
     }  
 })
 
-nombre.onchange = () => {
+userName.onchange = () => {
     event.preventDefault()
-    let user = nombre.value
+    let user = userName.value
     return document.body.append(`Bienvenid@ ${user}`)
 }
 
@@ -102,18 +105,23 @@ clickHere.addEventListener("click", () => {
             let productoEncontrado2 = productos.find(elemento => elemento.id === parseInt(select2.value))
             let productoEncontrado3 = productos.find(elemento => elemento.id === parseInt(select3.value))
             let productoEncontrado4 = productos.find(elemento => elemento.id === parseInt(select4.value))
-            let precioTotal1 = productoEncontrado1.precio * parseInt(cantidad1.value)
-            let precioTotal2 = productoEncontrado2.precio * parseInt(cantidad2.value)
-            let precioTotal3 = productoEncontrado3.precio * parseInt(cantidad3.value)
-            let precioTotal4 = productoEncontrado4.precio * parseInt(cantidad4.value)
+            let {nombre, precio} = productoEncontrado1
+            let {nombre:nombre2, precio:precio2} = productoEncontrado2
+            let {nombre:nombre3, precio:precio3} = productoEncontrado3
+            let {nombre:nombre4, precio:precio4} = productoEncontrado4
+            let precioTotal1 = precio * parseInt(cantidad1.value)
+            let precioTotal2 = precio2 * parseInt(cantidad2.value)
+            let precioTotal3 = precio3 * parseInt(cantidad3.value)
+            let precioTotal4 = precio4 * parseInt(cantidad4.value)
+            let valorTotal = precioTotal1 + precioTotal2 + precioTotal3 + precioTotal4
 
            
             elementoAMostar.innerHTML = `
-                                        <p>Valor unitario de producto ${productoEncontrado1.nombre}: ${productoEncontrado1.precio}</p>
-                                        <p>Valor unitario producto  ${productoEncontrado2.nombre}: ${productoEncontrado2.precio}</p>
-                                        <p>Valor unitario producto  ${productoEncontrado3.nombre}: ${productoEncontrado3.precio}</p>
-                                        <p>Valor unitario producto  ${productoEncontrado4.nombre}: ${productoEncontrado4.precio}</p>
-                                        <p>Valor total ${precioTotal1 + precioTotal2 + precioTotal3 + precioTotal4}
+                                        <p>Valor unitario de producto ${nombre}: ${precio}</p>
+                                        <p>Valor unitario producto  ${nombre2}: ${precio2}</p>
+                                        <p>Valor unitario producto  ${nombre3}: ${precio3}</p>
+                                        <p>Valor unitario producto  ${nombre4}: ${precio4}</p>
+                                        <p>Valor total ${valorTotal}
                                         `
             card.append(elementoAMostar)
         })

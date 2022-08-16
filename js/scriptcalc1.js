@@ -1,3 +1,4 @@
+
 input1.onclick = () =>{
     card.innerHTML=``;
     input1.checked = false
@@ -20,9 +21,6 @@ input1.onclick = () =>{
     document.body.append(card)
     
     let select1 = document.getElementById('select1');
-    let select2 = document.getElementById('select2');
-    let select3 = document.getElementById('select3');
-    let select4 = document.getElementById('select4');
     let cantidad = document.getElementById('cantidad1')
    
     let buttonCalcular = document.createElement("button")
@@ -30,12 +28,13 @@ input1.onclick = () =>{
     let elementoAMostar = document.createElement('p');
     buttonCalcular.addEventListener('click', () => {
         let productoEncontrado1 = productos.find(elemento => elemento.id === parseInt(select1.value))
-        let precioTotal  = productoEncontrado1.precio * parseInt(cantidad.value)
+        let {nombre, precio} = productoEncontrado1
+        let precioTotal  = precio * parseInt(cantidad.value)
     
 
         
         elementoAMostar.innerHTML = `
-                                    <p>Valor unitario de producto ${productoEncontrado1.nombre}: ${productoEncontrado1.precio}</p>
+                                    <p>Valor unitario de producto ${nombre}: ${precio}</p>
                                     <p>Valor de tu compra: $ ${precioTotal}
                                     `
         card.append(elementoAMostar)

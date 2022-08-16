@@ -30,15 +30,18 @@ input2.onclick = () =>{
     buttonCalcular.addEventListener('click', () => {
         let productoEncontrado1 = productos.find(elemento => elemento.id === parseInt(select1.value))
         let productoEncontrado2 = productos.find(elemento => elemento.id === parseInt(select2.value))
-        let precioTotal1 = productoEncontrado1.precio * parseInt(cantidad1.value) 
-        let precioTotal2 = productoEncontrado2.precio * parseInt(cantidad2.value)
+        let {nombre, precio} = productoEncontrado1
+        let {nombre:nombre2, precio:precio2} = productoEncontrado2
+        let precioTotal1 = precio * parseInt(cantidad1.value) 
+        let precioTotal2 = precio2 * parseInt(cantidad2.value)
+        let valorTotal = precioTotal1 + precioTotal2
        
 
        
         elementoAMostar.innerHTML = `
-                                    <p>Valor unitario de producto ${productoEncontrado1.nombre}: ${productoEncontrado1.precio}</p>
-                                    <p>Valor unitario producto  ${productoEncontrado2.nombre}: ${productoEncontrado2.precio}</p>
-                                    <p> Valor total: $ ${precioTotal1 + precioTotal2}
+                                    <p>Valor unitario de producto ${nombre}: ${precio}</p>
+                                    <p>Valor unitario producto  ${nombre2}: ${precio2}</p>
+                                    <p> Valor total: $ ${valorTotal}
                                     `
         card.append(elementoAMostar)
     })
