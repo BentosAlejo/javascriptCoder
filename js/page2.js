@@ -15,9 +15,9 @@ const paleta = document.getElementById("paleta")
 const localItem = localStorage.getItem("classbutton")
 
 localItem != null && paleta.classList.add(localItem)
-    
-    
-   
+
+
+
 
 
 const productos = [
@@ -128,18 +128,20 @@ clickHere.addEventListener("click", () => {
         
         card.append(buttonCalcular);
     }
-// const cantidad = document.createElement("div")
+    
+    
+    let alerta = () => {
+        Swal.fire({
+            title: 'Codigo: 09456',
+            text: '25% de dto con este codigo en el local',
+            icon: 'info',
+            confirmButtonText: 'Yendo no, llegando'
+        })
+    }
+    const info = document.getElementById("infoButton")
+    info.addEventListener("click",alerta)
 
-// let onlineUser = localStorage.setItem(nombre, "nombre")
 
 
-    // const producto1 = {id:"1",producto:"Arroz"}
-    // const enJSON = JSON.stringify(producto1)
-
-    // console.log(enJSON); {id:"1", producto:"Arroz"}
-    // console.log(typeof enJSON);string 
-    // console.log(typeof producto1); object    
-
-    // localStorage.setItem("producto1", enJSON); se guarda {id:"1", producto:"Arroz"}
 
 

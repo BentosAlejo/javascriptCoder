@@ -69,3 +69,12 @@ h4{
     background-color: crimson!important;
     border: 5px solid darkorange!important;
 }
+#infoButton{
+    border: 2px black solid;
+    border-radius: 50%;
+    margin: 2em;
+}
+#infoButton:hover{
+    transform: scale(2);
+    background-color: yellow;
+}
