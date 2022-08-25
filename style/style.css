@@ -78,3 +78,15 @@ h4{
     transform: scale(2);
     background-color: yellow;
 }
+#formRegistro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.inputForm{
+    border-radius: 5px;
+    border-color: black;
+    margin: 3px;
+    color: yellow;
+    background-color: black;
+}

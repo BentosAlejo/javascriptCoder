@@ -13,6 +13,9 @@ const card = document.createElement("div")
 const text = document.createElement("label")
 const paleta = document.getElementById("paleta")
 const localItem = localStorage.getItem("classbutton")
+const botonEnvio = document.createElement("button")
+const botonRetirar = document.createElement("button")
+const info = document.getElementById("infoButton")
 
 localItem != null && paleta.classList.add(localItem)
 
@@ -20,14 +23,16 @@ localItem != null && paleta.classList.add(localItem)
 
 
 
-const productos = [
-    {id:0, nombre: "Puerta", precio: 15000, stock: 12},
-    {id:1, nombre: "Ventana", precio: 9000, stock: 22},
-    {id:2, nombre: "Inodoro", precio: 10000, stock: 15},
-    {id:3, nombre: "Lavamanos", precio: 7000, stock: 16}
-];
+let productos = []
 
 
+fetch('../js/datos.json')
+    .then((response) => response.json())
+    .then((data) => {
+        productos.push(...data)
+    })
+    
+    
 
 
 submit.addEventListener("click", (e) => {
@@ -65,6 +70,16 @@ clickHere.addEventListener("click", () => {
         localStorage.setItem("classbutton", "class1")
     }
 })
+info.addEventListener("click", () =>{
+    Swal.fire({
+        title: 'Codigo: 0952',
+        text: '25% de dto en herramientas usando este codigo en el local',
+        icon: 'info',
+        confirmButtonText: 'Continuar'
+    })
+})
+
+
 
 
     input4.onclick = () =>{
@@ -124,22 +139,73 @@ clickHere.addEventListener("click", () => {
                                         <p>Valor total ${valorTotal}
                                         `
             card.append(elementoAMostar)
+
+            botonEnvio.innerText = `Envio a domicilio`
+        card.append(botonEnvio)
+
+        botonRetirar.innerText = `Retiro en el local`
+        card.append(botonRetirar)
+
+        botonRetirar.addEventListener("click", () =>{
+            card.innerHTML = ``
+            let ubicacion = document.createElement("iframe")
+            let retiro = document.createElement("p")
+            retiro.innerHTML = `En las proximas 24hs habiles podras pasar por el local a retirar tu pedido, como siempre en Pacheco y Moreno.Zarate`
+            
+            card.append(retiro, ubicacion)
+            setTimeout(()=>{
+                Swal.fire({
+                    title: 'Te esperamos de lunes a viernes de 8 a 18, Pacheco y Moreno, Zarate',
+                    text: 'En preparacion...',
+                    icon: 'success',
+                    confirmButtonText: 'Continuar'
+                })
+            }, 3000)
+            
+            
+        })
+        botonEnvio.addEventListener("click", ()=>{
+            card.innerHTML= ``
+            let precioEnvio = document.createElement("p")
+            let inputEnvio = document.createElement("input")
+            let infoEnvio = document.createElement("p")
+            let confirm = document.createElement("button")
+               
+            confirm.innerText = `Confirmar informacion`
+            infoEnvio.innerText = `Ingrese email, numero de telefono y horario de contacto para concretar la compra`
+            inputEnvio.innerText = `Ingrese ciudad, codigo postal, telefono y direccion`
+            precioEnvio.innerText = `El precio total final con envio es: ${valorTotal + 5000}`
+            
+            card.append(precioEnvio,infoEnvio , inputEnvio, confirm)
+            confirm.addEventListener("click", () =>{
+                let aviso = document.createElement("p")
+                aviso.innerText = `En las proximas horas sera contactado para concretar el pago.Gracias por su compra!`
+                card.append(aviso)
+                Swal.fire({
+                    title: 'Compra concretada',
+                    text: 'Gracias por elegirnos!',
+                    icon: 'success',
+                    confirmButtonText: 'Continuar',
+                    timer:10000
+                })
+                setTimeout(()=>{
+                    Swal.fire({
+                        title: 'Guardamos tu info correctamente,en tu horario de disponibilidad nos contactaremos para concretar la compra ',
+                        text: 'Compra concretada',
+                        icon: 'info',
+                        confirmButtonText: 'Continuar',
+                        timer:10000
+                    })
+                }, 5000)
+            })
+        })
+
         })
         
         card.append(buttonCalcular);
     }
     
     
-    let alerta = () => {
-        Swal.fire({
-            title: 'Codigo: 09456',
-            text: '25% de dto con este codigo en el local',
-            icon: 'info',
-            confirmButtonText: 'Yendo no, llegando'
-        })
-    }
-    const info = document.getElementById("infoButton")
-    info.addEventListener("click",alerta)
 
 
 
