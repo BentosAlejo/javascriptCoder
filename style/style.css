@@ -90,3 +90,70 @@ h4{
     color: yellow;
     background-color: black;
 }
+#subNav{
+    color: yellow;
+}
+.picRep{
+    border-radius: 1rem ;
+    border: black solid 2px;
+}
+#divPictures{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2rem;
+}
+.card3{
+    color: yellow;
+}
+#carouselExampleFade{
+    width: 40rem;
+    margin: auto;
+    background-color: black;
+}
+.parraf{
+    background-color: black;
+    color: yellow;
+}
+#close{
+    background-color: black;
+    color: yellow;
+    border: 5px;
+    width: 5rem;
+    height: 3rem;
+}
+@media(max-width:768px){
+    #divPictures{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .picRep{
+        margin-top: 1em;
+        width: 10rem;
+        height: 10rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container{
+        flex-direction: column;
+
+    }
+    .circulo{
+        border: 2px solid black;
+        border-radius: 50%;
+        width: 20em;
+        height: 20em;
+        margin:5em;
+        background-size: cover;
+    }
+    iframe{
+        width: auto;
+    }
+    #carouselExampleFade{
+        width: auto;
+        margin: auto;
+        background-color: black;
+    }
+}
+

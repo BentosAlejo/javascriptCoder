@@ -9,13 +9,14 @@ const input1 = document.getElementById("input1")
 const input2 = document.getElementById("input2")
 const input3 = document.getElementById("input3")
 const input4 = document.getElementById("input4")
-const card = document.createElement("div")
+const card = document.getElementById("articleProductos")
 const text = document.createElement("label")
 const paleta = document.getElementById("paleta")
 const localItem = localStorage.getItem("classbutton")
 const botonEnvio = document.createElement("button")
 const botonRetirar = document.createElement("button")
 const info = document.getElementById("infoButton")
+const form = document.getElementById("formRegistro")
 
 localItem != null && paleta.classList.add(localItem)
 
@@ -39,20 +40,20 @@ submit.addEventListener("click", (e) => {
     e.preventDefault()
     if(password.value.length < 5) {
         aviso.innerText = "La contraseña debe tener mas de 5 caracteres"
-         return document.body.append(aviso)
+         return form.append(aviso)
     }else if(!/[0-9]/.test(password.value)) {
         aviso.innerText = "La contraseña debe tener un numero"
-        return document.body.append(aviso)
+        return form.append(aviso)
     }else{
         aviso.innerText = "Contraseña guardada correctamente"
-         return document.body.append(aviso)
+         return form.append(aviso)
     }  
 })
 
 userName.onchange = () => {
     event.preventDefault()
     let user = userName.value
-    return document.body.append(`Bienvenid@ ${user}`)
+    return form.append(`Bienvenid@ ${user}`)
 }
 
 
@@ -205,6 +206,7 @@ info.addEventListener("click", () =>{
         card.append(buttonCalcular);
     }
     
+
     
 
 

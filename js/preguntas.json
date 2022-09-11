@@ -1,0 +1,5 @@
+[
+   {"id":"gas", "contenido":"Linea telefonica para soporte por gasista: 3487112233, consejo:Si vas a hacer una instalacion por tu cuenta, recorda probar siempre si hay perdidas, hacelo con una esponja con detergente en cada union que coloques, si salen burbujas es que esta perdiendo!" },
+   {"id":"sanitarios", "contenido": "Linea telefonica para soporte de plomero: 3487 994466,consejo:Factores a tener en cuenta a la hora de termofusionar piezas:temperatura ambiente,marca(dureza de los accesorios).Dependiendo de los factores anteriores es la cantidad de tiempo que se necesita calentar las piezas para una buena fusion.En piezas roscadas no olvides usar teflon/cañamo y sellaroscas!"},
+   {"id":"electricidad", "contenido":"Linea telefonica para soporte por electricista: 3487336688, consejo:Animate a hacer empalmes de cables con termocontaible!, genera un trabajo mas prolijo que la cinta aisladora"} 
+]
